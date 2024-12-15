@@ -1,0 +1,27 @@
+class course_grades:
+    def _init_(self):
+        self.course_name = []
+        self.name = []
+        self.ID = []
+        self.Grades = []
+    def course(self):
+        self.course_name = input("Please enter name of course: ")
+        for i in range(0,5):
+            self.name.append(input("Please enter the name of student: "))
+        for i in range (0,5):
+            self.ID.append(input("Please enter the ID of student: "))
+        for i in range (0,5):
+            self.Grades.append(input("Please enter grades: "))
+
+    def display(self):
+        print("Course name", self.course_name)
+        print("Student name: ")
+        for y in range(0, len(self.name)):
+            print(self.name)
+        print("Student ID: ")
+        for y in range(0,len(self.ID)):
+            print(self.ID)
+        print("Grades: ")
+        for y in range(0,len(self.Grades)):
+            print(self.Grades)
+        print("")
