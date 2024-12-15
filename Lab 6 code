@@ -1,0 +1,34 @@
+import Lab_6_prep as lp
+import pickle
+
+course_list = []
+while 1:
+    print("")
+    print("1. Add course and students")
+    print("2. Display courses and students")
+    print("0. Exit")
+    option = int(input())
+    print("")
+
+    if option == 1:
+        cc = lp.course_grades()
+        cc.course()
+        course_list.append(cc)
+        d = open('Course_Project.dat','ab')
+        pickle.dump(cc,d)
+        d.close()
+    if option == 2:
+        d = open('Courses_Project.dat','rb')
+        while 2:
+            try:
+                data = pickle.load(d)
+                print(data.course_name)
+                print(data.name)
+                print(data.ID)
+                print(data.Grades)
+            except EOFError:
+                break
+        d.close()
+    if option == 0:
+        print("Goodbye")
+        break
